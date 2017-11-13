@@ -42,12 +42,12 @@ class World:
 
 		if rowStart == 0:
 			rowStart = 0
-		if rowEnd == 30:
-			rowEnd = 29
+		if rowEnd == self.rows:
+			rowEnd = self.rows - 1
 		if colStart == 0:
 			colStart = 0
-		if colEnd == 30:
-			colEnd = 29
+		if colEnd == self.cols:
+			colEnd = self.cols - 1
 
 		for r in range(rowStart, rowEnd+1):
 			for c in range(colStart, colEnd+1):
