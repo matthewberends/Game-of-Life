@@ -32,12 +32,10 @@ class World:
 		return numNeighbors < 2 or numNeighbors > 3
 
 	def getNumNeighbors(self, cell):
-		cellRow = cell.row
-		rowStart = cellRow-1
-		rowEnd = cellRow+1
-		cellCol = cell.col
-		colStart = cellCol-1
-		colEnd = cellCol+1
+		rowStart = cell.row - 1
+		rowEnd = rowStart + 2
+		colStart = cell.col - 1
+		colEnd = colStart + 2
 		numNeighbors = 0
 
 		if rowStart == 0:

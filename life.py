@@ -3,14 +3,7 @@ import sys
 import os
 from world import World
 import Tkinter as tk
-
-GLIDER = {
-    (2, 2),
-    (2, 1),
-    (0, 2),
-    (1, 2),
-    (1, 0),
-}
+import pieces
 
 WINDOW_SIZE = 500
 
@@ -57,11 +50,12 @@ class Life(tk.Tk):
 		self.after(20, lambda: self.advance())
 
 	def set_world(self, start_state, world):
-		for x, y in start_state:
-			world.init_cell(x, y)
+		for creature in start_state:
+			for x, y in creature:
+				world.init_cell(x, y)
 
 
 if __name__ == '__main__':
-    life = Life(GLIDER)
+    life = Life([pieces.GLIDER_GUN, pieces.REVERSE_GLIDER])
     life.advance()
     life.mainloop()
