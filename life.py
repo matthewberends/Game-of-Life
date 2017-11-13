@@ -21,13 +21,13 @@ class Life(tk.Tk):
 
 		tk.Tk.__init__(self, *args, **kwargs)
 		self.canvas = tk.Canvas(
-			self, 
-			width=WINDOW_SIZE, 
-			height=WINDOW_SIZE, 
+			self,
+			width=WINDOW_SIZE,
+			height=WINDOW_SIZE,
 			borderwidth=0,
 			highlightthickness=0)
 		self.canvas.pack(side="top", fill="both", expand="true")
-		
+
 		self.rect = {}
 		self.rows = world_size
 		self.columns = world_size
@@ -61,14 +61,7 @@ class Life(tk.Tk):
 			world.init_cell(x, y)
 
 
-
 if __name__ == '__main__':
     life = Life(GLIDER)
     life.advance()
     life.mainloop()
-
-
-
-
-
-
