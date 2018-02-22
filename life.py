@@ -2,7 +2,14 @@ import time
 import sys
 import os
 from world import World
-import Tkinter as tk
+
+try:
+    # for Python2
+    import Tkinter as tk
+except ImportError:
+    # for Python3
+    import tkinter as tk
+
 import pieces
 
 WINDOW_SIZE = 500
